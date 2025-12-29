@@ -32,3 +32,13 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest
+
+  deploy:
+  needs: build-and-test
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Deploy (mock stage)
+      run: |
+        echo "Deploy stage started"
+        echo "Application successfully deployed (mock)"
